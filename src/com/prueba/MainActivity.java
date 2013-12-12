@@ -1,16 +1,15 @@
 package com.prueba;
 
-import org.apache.cordova.*;
 import android.os.Bundle;
-//import android.app.Activity;
+import android.app.Activity;
 import android.view.Menu;
 
-public class MainActivity extends DroidGap {
+public class MainActivity extends Activity {
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		super.loadUrl("file:///android_asset/www/index.html");
+		setContentView(R.layout.activity_main);
 	}
 
 	@Override

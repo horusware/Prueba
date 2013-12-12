@@ -1,12 +1,73 @@
-<!DOCTYPE HTML>
- <html>
- <head>
- <title>Ejemplo</title>
- <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
- </head>
+<!DOCTYPE html>  <!-- Encabezado de HTML5-->
+<html lang="es"> <!-- Definimos el idioma del texto -->
 
- <body>
- <h1>Hola mundo</h1>
-<p>Esta es mi primera aplicaci�n</p>
- </body>
- </html>
+<!-- Comienzo de sección HEAD-->
+<head>
+    <!-- Definimos la codificación UTF-8 
+         para corregir errores de codificación (acentos, eñes, etc) -->
+    <meta charset="UTF-8">
+
+    <!-- El título de la aplicación (¿se muestra en algún lado?) -->
+    <title>Purr Master 3000</title>
+
+    <!-- Importamos una hoja de estilos desde un archivo CSS -->
+    <link rel="stylesheet" href="styles.css" type="text/css">
+
+    <!-- Importamos las librerías de Cordova (Phonegap) -->
+    <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+
+    <!-- Comienza bloque de código Javascript -->
+    <script type="text/javascript" charset="utf-8">
+
+        // Esperar a que Cordova esté listo
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Función que activa la vibración durante 2 segundos
+        function vibrar() {
+            // Ver documentación en:
+            // http://docs.phonegap.com/en/2.1.0/cordova_notification_notification.md.html#notification.vibrate
+            navigator.notification.vibrate(2000);
+        }
+
+        // Función que muestra un cartel emergente
+        function alerta() {
+            // Ver documentación en:
+            // http://docs.phonegap.com/en/2.1.0/cordova_notification_notification.md.html#notification.alert
+            navigator.notification.alert(
+                'Roar!',    // Mensaje del alert
+                '',            // Callback
+                'El minino hace:',   // Título del alert
+                'Ok...'     // Texto del botón
+            );
+        }
+    </script>
+    <!-- Fin del bloque de código Javascript -->    
+
+</head>
+<!-- Fin de sección HEAD -->
+
+<!-- Comienzo de sección BODY -->
+<body>
+    <div>
+
+        <h1>Bienvenido a Purr Master 3000</h1>
+
+        <!-- Link que llama a la función vibrar() -->
+        <a href="#" onclick="vibrar(); return false;">
+              <img src="gato.jpg" alt="Gatico"><br>
+            Tocá al gatito...
+        </a>
+
+        <hr>
+
+        <a href="#" onclick="alerta(); return false;">
+            <h2>¿Cómo hace el minino?</h2>
+        </a>
+
+        <br>
+    </div>
+</body>
+<!-- Fin de sección BODY -->
+
+</html>
+<!-- Fin del archivo HTML -->
